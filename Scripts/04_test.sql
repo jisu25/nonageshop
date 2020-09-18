@@ -3,3 +3,7 @@ UPDATE BOARD SET NAME = '성윤정', EMAIL = 'pinksung@nate.com', PASS = '1234',
 DELETE BOARD WHERE NUM = ?;
 
 SELECT * FROM board;
+
+SELECT * FROM MEMBER;
+
+DELETE MEMBER WHERE member_id = 'banana';
