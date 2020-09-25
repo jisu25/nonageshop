@@ -9,7 +9,7 @@
         <fieldset>
         <legend></legend>
           <label>User ID</label>
-          <input name="id" type="text" value="${id}" value="one"><br> 
+          <input name="id" type="text" value="${id}"><br> 
           <label>Password</label> 
           <input name="pwd" type="password"><br> 
         </fieldset>

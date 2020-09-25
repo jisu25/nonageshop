@@ -1,15 +1,19 @@
 package nonageshop.service;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
 import nonageshop.dao.ProductDao;
 import nonageshop.dao.impl.ProductDaoImpl;
+import nonageshop.ds.JndiDs;
 import nonageshop.dto.Product;
 
 public class ProductService {
 
 	private ProductDao dao = ProductDaoImpl.getInstance();
+	
+	public ProductService() {
+		dao.setConnection(JndiDs.getConnection());
+	}
 	
 	// 신상품 리스트 얻어오기
 	public ArrayList<Product> listNewProduct() {
@@ -30,4 +34,17 @@ public class ProductService {
 	public ArrayList<Product> listKindProduct(String kind) {
 		return dao.listKindProduct(kind);
 	}
+	
+	public int totalRecord(String productName) {
+		return dao.totalRecord(productName);
+	}
+	
+	public String pageNumber(int tpage, String name) {
+		return dao.pageNumber(tpage, name);
+	}
+	
+	public ArrayList<Product> listProduct(int tpage, String productName) {
+		return dao.listProduct(tpage, productName);
+	}
+	
 }

@@ -3,7 +3,7 @@ function go_cart() {
     alert("수량을 입력하여 주세요.");
     document.formm.quantity.focus();
   } else {
-    document.formm.action = "NonageServlet?command=cart_insert";
+    document.formm.action = "cartInsert.do";
     document.formm.submit();
   }
 }
@@ -11,15 +11,15 @@ function go_cart() {
 function go_cart_delete() {
   var count = 0;
 
-  if (document.formm.cseq.length == undefined) {
-    if (document.formm.cseq.checked == true) {
+  if (document.formm.no.length == undefined) {
+    if (document.formm.no.checked == true) {
       count++;
     }
   }
 
-  for ( var i = 0; i < document.formm.cseq.length; i++) {
-    alert("" + document.formm.cseq[i].checked);
-    if (document.formm.cseq[i].checked == true) {
+  for ( var i = 0; i < document.formm.no.length; i++) {
+    alert("" + document.formm.no[i].checked);
+    if (document.formm.no[i].checked == true) {
       count++;
       alert("" + count);
     }
@@ -28,27 +28,27 @@ function go_cart_delete() {
     alert("삭제할 항목을 선택해 주세요.");
 
   } else {
-    document.formm.action = "NonageServlet?command=cart_delete";
+    document.formm.action = "cartDelete.do";
     document.formm.submit();
   }
 }
 
 function go_order_insert() {
-  document.formm.action = "NonageServlet?command=order_insert";
+  document.formm.action = "orderInsert.do";
   document.formm.submit();
 }
 
 function go_order_delete() {
   var count = 0;
 
-  if (document.formm.oseq.length == undefined) {
-    if (document.formm.oseq.checked == true) {
+  if (document.formm.no.length == undefined) {
+    if (document.formm.no.checked == true) {
       count++;
     }
   }
 
-  for ( var i = 0; i < document.formm.oseq.length; i++) {
-    if (document.formm.oseq[i].checked == true) {
+  for ( var i = 0; i < document.formm.no.length; i++) {
+    if (document.formm.no[i].checked == true) {
       count++;
     }
   }
@@ -56,12 +56,12 @@ function go_order_delete() {
     alert("삭제할 항목을 선택해 주세요.");
 
   } else {
-    document.formm.action = "NonageServlet?command=order_delete";
+    document.formm.action = "orderDelete.do";
     document.formm.submit();
   }
 }
 
 function go_order() {
-  document.formm.action = "NonageServlet?command=mypage";
+  document.formm.action = "mypage.do";
   document.formm.submit();
 }

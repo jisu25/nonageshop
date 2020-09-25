@@ -41,8 +41,10 @@ public class LoginHandler implements Command {
 			String pwd = request.getParameter("pwd");
 			
 			Member mem = service.getMember(id);
+			System.out.println("mem 조회 : " + mem);
+			System.out.println("입력한 비번 : " + pwd);
 
-			if(mem != null) {
+			if(mem != null && pwd.equals(mem.getPwd())) {
 				session.removeAttribute("id");
 				session.setAttribute("loginUser", mem);
 				response.sendRedirect(request.getContextPath() + "/index.do");

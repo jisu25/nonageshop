@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 import nonageshop.dao.MemberDao;
+import nonageshop.ds.JndiDs;
 import nonageshop.dto.Member;
 
 public class MemberDaoImpl implements MemberDao {
@@ -15,6 +16,7 @@ public class MemberDaoImpl implements MemberDao {
 	private Connection con;
 	
 	private MemberDaoImpl() {
+		con = JndiDs.getConnection();
 	}
 	
 	public static MemberDaoImpl getInstance() {
@@ -28,7 +30,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public int confirmId(String id) {
-		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID = ?";
+		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID = ? AND MEMBER_PWD = ?";
 		
 		try(PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, id);

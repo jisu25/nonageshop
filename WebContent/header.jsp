@@ -24,7 +24,6 @@
 				});
 				str += "</ul>"
 				$("#top_menu").append(str);
-				$("#sub_menu").append(str);
 			}
 		});
   	});

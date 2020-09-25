@@ -1,3 +1,20 @@
+<script>
+$(function(){
+	$.ajax({
+		type: "POST",
+		url: "category.do",
+		dataType: "json",
+		success: function(data) {
+			var str="<ul>";
+			$.each(data, function(i) {
+				str += "<li><a href='category.do?kind=" + data[i].kind + "'>" + data[i].name + "</a></li>"  
+			});
+			str += "</ul>"
+			$("#sub_menu").append(str);
+		}
+	});
+});
+</script>
   <nav id="sub_menu">
   </nav>
 

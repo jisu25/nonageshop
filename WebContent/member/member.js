@@ -34,8 +34,6 @@ function idcheck() {
 }
 
 function post_zip() {
-  /*var url = "findZipNum.do";
-  window.open( url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=300, top=300, left=300, ");*/
     new daum.Postcode({
         oncomplete: function(data) {
         	// 각 주소의 노출 규칙에 따라 주소를 조합한다.

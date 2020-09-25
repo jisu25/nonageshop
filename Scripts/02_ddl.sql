@@ -66,7 +66,10 @@ CREATE TABLE MEMBER (
 CREATE TABLE CART (
 	cart_no NUMBER(5) PRIMARY KEY, /* 장바구니번호 */
 	member_id VARCHAR2(20), /* 회원아이디 */
-	product_no NUMBER(5) /* 상품번호 */
+	product_no NUMBER(5), /* 상품번호 */
+	quantity NUMBER(5), /* 수량 */
+	RESULT CHAR(1) DEFAULT 1,
+	reg_date DATE DEFAULT sysdate
 );
 
 

@@ -27,4 +27,15 @@ public interface ProductDao {
 	
 	int deleteProduct(Product pdt);
 	
+	
+	// Admin
+	
+	int totalRecord(String productName);
+	
+	String pageNumber(int tpage, String name);
+	
+	ArrayList<Product> listProduct(int tpage, String productName);
+	
+	
+	
 }
