@@ -30,7 +30,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public int confirmId(String id) {
-		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID = ? AND MEMBER_PWD = ?";
+		String sql = "SELECT * FROM MEMBER WHERE MEMBER_ID = ?";
 		
 		try(PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setString(1, id);
